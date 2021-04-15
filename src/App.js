@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Glasses from './Component/BaiTap2/Glasses';
+import {BrowserRouter,Switch,Route} from "react-router-dom";
+import Header from './Pages/Header/Header';
+import BaiTap1 from "./Component/DivComponent/BaiTap1";
+import BaiTap1Home from "./Component/BaiTap1/BaiTap1Home";
+import ShowRoomCard from "./Component/ShowRoomcCar/ShowRoomCard";
+import Parent from "./Component/props/Parent";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Header/>
+      <Switch>
+        <Route path="/baitap2" component={Glasses}/>
+        <Route path="/baitap1home" component={BaiTap1Home}/>
+        <Route path="/baitap1" component={BaiTap1}/>
+        <Route path="/showroomcard" component={ShowRoomCard}/>
+        <Route path="/parent" component={Parent}/>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
